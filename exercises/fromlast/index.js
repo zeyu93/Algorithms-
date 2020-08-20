@@ -11,6 +11,28 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+const L = require("./linkedlist");
+const List = L.LinkedList;
+
+function fromLast(list, n) {
+  let first = list.head;
+  let second = list.head;
+  while (n > 0) {
+    second = second.next;
+    n--;
+  }
+  while(second.next){
+    first = first.next;
+    second = second.next;
+  }
+  return first
+}
+
+const list = new List();
+list.insertLast("a");
+list.insertLast("b");
+list.insertLast("c");
+list.insertLast("d");
+fromLast(list, 2).data  
 
 module.exports = fromLast;
