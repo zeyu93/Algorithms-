@@ -41,7 +41,7 @@ class Tree {
     }
   }
 
-  traverseDF(fn){
+  traverseDFS(fn){
     let stack = [this.root];
     while(stack.length){
       let currentNode = stack.shift(); 

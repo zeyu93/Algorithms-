@@ -108,15 +108,15 @@ class LinkedList {
     let nextNode = this.getAt(index);
     console.log("prev node:", prevNode, "nextNode:", nextNode);
     let newNode = new Node(n, nextNode);
-  
+
     prevNode.next = newNode;
     return;
   }
 
-  forEach(fn){
-    let counter = 0
+  forEach(fn) {
+    let counter = 0;
     let node = this.head;
-    while(node){
+    while (node) {
       fn(node, counter);
       counter++;
       node = node.next;
@@ -124,11 +124,64 @@ class LinkedList {
   }
 }
 
-let l = new LinkedList();
-l.insertFirst(4);
-l.insertFirst(3);
-l.insertFirst(2);
-l.insertFirst(1);
+// let l = new LinkedList();
+// l.insertFirst(4);
+// l.insertFirst(3);
+// l.insertFirst(2);
+// l.insertFirst(1);
 
-console.log(l)
+let node = new Node("a");
+let node1 = new Node("b");
+let node2 = new Node("c");
+let node3 = new Node("d");
+
+node.next = node1;
+node1.next = node2;
+node2.next = node3;
+
+
+
+const cloneList= (head) =>{
+  const dummy = new Node(-1)
+  let current = dummy
+  
+  while(head){
+    let newNode = new Node(head.data + 'cloned')
+    current.next = newNode
+    head = head.next
+    current = current.next
+  }
+
+  console.log(dummy.next)
+  return dummy.next
+}
+
+cloneList(node)
+console.log(node)
+
+const swapInPairs = head => {
+  let dummy = new Node(-1);
+  let holder = dummy;
+  while (head) {
+    console.log(head)
+
+    let node1 = head;
+    let node2 = node1 ? head.next : null 
+    let node3 = node2 ? node2.next : null
+
+    if (!node1.next) {
+      dummy.next = node1;
+    } else {
+      dummy.next = node2;
+      node2.next = node1;
+      node1.next = node3
+    }
+    dummy = dummy.next.next;
+    head = head.next.next;
+    console.log(head)
+  }
+  return holder.next;
+};
+
+
 module.exports = { Node, LinkedList };

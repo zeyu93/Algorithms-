@@ -61,7 +61,7 @@ let grid = [
   ["1", "1", "1"]
 ];
 
-numIslands(grid);
+// numIslands(grid);
 
 
 const  numIslandsIterative = (grid) =>{
@@ -79,3 +79,34 @@ const  numIslandsIterative = (grid) =>{
   }
 
 }
+
+function displayMessage (who, timeout) {
+  return new Promise((resolve, reject)=>{
+    setTimeout(()=> resolve(`Mr. ${who}`), timeout)
+  })
+}
+
+// displayMessage("john",200).then((msg)=>{
+//   console.log(`hello ${msg}`)
+// })
+
+
+const apartment = { rooms :3 , bathrooms: 2}
+const yo = { ho :3 , hec: 2}
+
+const test = {
+  rooms: apartment.rooms
+}
+
+const x = 4
+for (let i =0 ; i<x; i++){
+  let row="*".repeat(1 + (2 * i));
+  console.log(row.padStart(x + i))
+}
+
+for (let i =x-2 ; i>=0; i--){
+  let row="*".repeat(1 + (2 * i));
+  console.log(row.padStart(x + i))
+}
+
+

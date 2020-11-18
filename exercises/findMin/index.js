@@ -9,7 +9,6 @@ const findMin = nums => {
     } else {
       right = mid;
     }
-    console.log(left, right)
   }
   return nums[left];
 };

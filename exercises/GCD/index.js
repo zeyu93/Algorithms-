@@ -6,4 +6,19 @@ const GCD = (num1, num2) => {
 
 };
 
-console.log(GCD(12,18))
+
+const GCD2 = (num1, num2)=>{
+  let min = Math.min(num1, num2);
+
+
+  for(let i = min; i>=0;i--){
+    if(num1 % i === 0 && num2 % i === 0){
+      console.log(i)
+      return i
+    }
+  }
+}
+
+GCD2(4,20)
+
+

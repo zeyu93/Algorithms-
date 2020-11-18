@@ -1,9 +1,8 @@
-const GCD = (num, arr)=>{
+const GCD = (arr)=>{
   if(!arr.length) return null
   if(arr.length === 1 ) return arr[0]
 
-  let queue = [arr.shift()]
-  let result = []
+
   const GCDDouble = (num1=0, num2=0) =>{
     if(num1 === 0) return num2;
     if(num2 === 0) return num1;
@@ -14,11 +13,4 @@ const GCD = (num, arr)=>{
 
 }
 
-// GCD(5,[3,12,9])
-
-let arr = [3,12,9]
-let reduced = arr.reduce((a,b)=>{
-  return a + b
-})
-
-console.log(reduced)
+GCD([3,12,24])
